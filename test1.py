@@ -70,39 +70,74 @@ class DelButton(Buttons):
     def __init__(self):
         super().__init__()
         self.setText("Del")
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: azure;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: italic;
+        background-color: ivory;
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px inset darkslategray;
+        }
+        QPushButton:hover {
+        font-size: 20px;
+        font-style: italic;
+        font-weight: italic;
+        background-color: lemonchiffon;
+        border-radius: 15px;
+        padding: 10px;
+        border: 1px inset darkslategray;
+        }
+        """)
 
 
 class CButton(Buttons):
     def __init__(self):
         super().__init__()
         self.setText("C")
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: mistyrose;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton{
+               font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: salmon;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }
+               QPushButton:hover {
+                 font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: tomato;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }""")
 
 
 class DivisorButton(Buttons):
     def __init__(self):
         super().__init__()
         self.setText("/")
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: azure;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton {
+              font-size: 20px;
+              font-style: italic;
+              font-weight: italic;
+              background-color: ivory;
+              border-radius: 15px;
+              padding: 10px;
+              border: 1px inset darkslategray;
+              }
+              QPushButton:hover {
+              font-size: 20px;
+              font-style: italic;
+              font-weight: italic;
+              background-color: lemonchiffon;
+              border-radius: 15px;
+              padding: 10px;
+              border: 1px inset darkslategray;
+              }
+              """)
 
 
 class Number(Buttons):
@@ -110,13 +145,24 @@ class Number(Buttons):
         super().__init__()
         self.number = number
         self.setText(self.number)
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: azure;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton{
+               font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: lightcyan;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }
+               QPushButton:hover {
+                 font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: paleturquoise;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }""")
 
 
 class Symbol(Buttons):
@@ -124,26 +170,49 @@ class Symbol(Buttons):
         super().__init__()
         self.symbol = symbol
         self.setText(self.symbol)
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: lightcyan;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton {
+              font-size: 20px;
+              font-style: italic;
+              font-weight: italic;
+              background-color: ivory;
+              border-radius: 15px;
+              padding: 10px;
+              border: 1px inset darkslategray;
+              }
+              QPushButton:hover {
+              font-size: 20px;
+              font-style: italic;
+              font-weight: italic;
+              background-color: lemonchiffon;
+              border-radius: 15px;
+              padding: 10px;
+              border: 1px inset darkslategray;
+              }
+              """)
 
 
 class ResultButton(Buttons):
     def __init__(self):
         super().__init__()
         self.setText("=")
-        self.setStyleSheet("font-size: 20px;"
-                           "font-style: italic;"
-                           "font-weight: italic;"
-                           "background-color: lightgreen;"
-                           "border-radius: 15px;"
-                           "padding: 10px;"
-                           "border: 1px inset darkslategray;")
+        self.setStyleSheet("""QPushButton{
+               font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: palegreen;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }
+               QPushButton:hover {
+                 font-size: 20px;
+               font-style: italic;
+               font-weight: italic;
+               background-color: chartreuse;
+               border-radius: 15px;
+               padding: 10px;
+               border: 1px inset darkslategray;
+               }""")
 
 
 class Grid(QGridLayout):
@@ -205,7 +274,7 @@ class Grid(QGridLayout):
 
         for i, button in enumerate(buttons_title):
 
-            if button not in ("-", "*", "+"):
+            if button in ("-", "*", "+"):
                 b = Symbol(button)
             else:
                 b = Number(button)
