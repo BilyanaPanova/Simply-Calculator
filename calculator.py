@@ -223,7 +223,7 @@ class Grid(QGridLayout):
         self.addWidget(self.result_display, 0, 0, 1, 4)
         self.addWidget(self.condition_display, 1, 0, 1, 4)
         self.add_buttons()
-        self.setContentsMargins(0, 5, 0, 450)
+        self.setSpacing(5)
 
     def clicked_button(self):
         sender = self.sender()
@@ -242,7 +242,6 @@ class Grid(QGridLayout):
                 self.condition_display.clear()
                 self.result_display.clear()
             elif text_on_clicked_button != "=":
-
                 current_text = self.condition_display.text()
                 self.condition_display.setText(current_text + text_on_clicked_button)
             else:
@@ -252,6 +251,8 @@ class Grid(QGridLayout):
                     self.result_display.setText(result[:7])
                 except Exception:
                     self.result_display.error_message()
+
+                self.condition_display.clear()
 
     def add_buttons(self):
 
@@ -288,9 +289,10 @@ class MyApp(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("My Simply Calculator")
-        self.setGeometry(10, 10, 500, 500)
+        self.setGeometry(0, 0, 200, 250)
         self.setStyleSheet("background-color: whitesmoke;")
         layout = QVBoxLayout()
+
         self.setLayout(layout)
 
         grid = Grid()
@@ -300,6 +302,5 @@ class MyApp(QWidget):
 app = QApplication(sys.argv)
 
 window = MyApp()
-
 window.show()
 app.exec()
